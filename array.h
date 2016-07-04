@@ -17,11 +17,18 @@ class Array {
         Array(size_t size);
         Array(const Array<T>& orig);
 
+        iterator begin();
+        iterator begin() const;
+        iterator end();
+        iterator end() const;
+
 
     private:
         size_t      _capacity;
         size_t      _size;
         iterator    _array;
 };
+
+#include "array_constructors.h"
 
 #endif // ARRAY_H

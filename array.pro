@@ -6,4 +6,6 @@ CONFIG -= qt
 SOURCES += main.cpp
 
 HEADERS += \
-    array.h
+    array.h \
+    array_constructors.h \
+    array_iterators.h
