@@ -13,6 +13,10 @@ class Array {
 
         typedef T* iterator;
 
+        Array();
+        Array(size_t size);
+        Array(const Array<T>& orig);
+
 
     private:
         size_t      _capacity;
