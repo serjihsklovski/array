@@ -1,0 +1,4 @@
+#ifndef ARRAY_METHODS_H
+#define ARRAY_METHODS_H
+
+#endif // ARRAY_METHODS_H

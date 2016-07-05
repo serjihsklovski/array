@@ -8,10 +8,14 @@ template<typename T>
 class Array {
     public:
         enum {
-            MIN_CAPACITY = 4
+            MIN_CAPACITY = 4,
+            FACTOR = 2
         };
 
-        typedef T* iterator;
+        typedef T*          iterator;
+        typedef const T*    const_iterator;
+        typedef T&          reference;
+        typedef const T&    const_reference;
 
         Array();
         Array(size_t size);
@@ -22,6 +26,10 @@ class Array {
         iterator end();
         iterator end() const;
 
+        void reserve(size_t n);
+
+        void push_back(const_reference value);
+
 
     private:
         size_t      _capacity;
@@ -30,5 +38,7 @@ class Array {
 };
 
 #include "array_constructors.h"
+#include "array_memory_changes.h"
+#include "array_methods.h"
 
 #endif // ARRAY_H

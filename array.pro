@@ -8,4 +8,6 @@ SOURCES += main.cpp
 HEADERS += \
     array.h \
     array_constructors.h \
-    array_iterators.h
+    array_iterators.h \
+    array_methods.h \
+    array_memory_changes.h
