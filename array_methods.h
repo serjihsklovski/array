@@ -7,7 +7,7 @@
 template<typename T>
 void Array<T>::push_back(const_reference value) {
     if (_size == _capacity) {
-        reserve(Array::FACTOR * _capacity);
+        reserve(FACTOR * _capacity);
     }
 
     _array[_size++] = value;

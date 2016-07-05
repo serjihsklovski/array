@@ -19,4 +19,20 @@ void Array<T>::reserve(size_t n) {
     }
 }
 
+
+template<typename T>
+void Array<T>::shrink() {
+    if (_size == _capacity || _size <= MIN_CAPACITY) {
+        return;
+    } else {
+        iterator it = new T[_size];
+        std::copy(begin(), end(), it);
+        _capacity = _size;
+
+        delete[] _array;
+
+        _array = it;
+    }
+}
+
 #endif // ARRAY_MEMORY_CHANGES_H

@@ -27,6 +27,7 @@ class Array {
         iterator end() const;
 
         void reserve(size_t n);
+        void shrink();
 
         void push_back(const_reference value);
 
