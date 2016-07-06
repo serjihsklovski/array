@@ -2,6 +2,7 @@
 #define ARRAY_H
 
 #include <cstdlib>
+#include "array_exceptions.h"
 
 
 template<typename T>
@@ -26,10 +27,16 @@ class Array {
         iterator end();
         iterator end() const;
 
+        size_t get_size() const;
+        size_t get_capacity() const;
+
         void reserve(size_t n);
         void shrink();
 
         void push_back(const_reference value);
+        reference pop_back() throw (EmptyArrayException);
+
+        bool is_empty() const;
 
 
     private:
@@ -39,6 +46,7 @@ class Array {
 };
 
 #include "array_constructors.h"
+#include "array_iterators.h"
 #include "array_memory_changes.h"
 #include "array_methods.h"
 
