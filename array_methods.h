@@ -41,4 +41,10 @@ bool Array<T>::is_empty() const {
     return _size == 0;
 }
 
+
+template<typename T>
+typename Array<T>::reference Array<T>::operator [](int index) {
+    return _array[index];
+}
+
 #endif // ARRAY_METHODS_H

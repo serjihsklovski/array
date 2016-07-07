@@ -38,6 +38,8 @@ class Array {
 
         bool is_empty() const;
 
+        reference operator [](int index);
+
 
     private:
         size_t      _capacity;
