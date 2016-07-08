@@ -47,4 +47,20 @@ typename Array<T>::reference Array<T>::operator [](int index) {
     return _array[index];
 }
 
+
+template<typename T>
+T Array<T>::at(int index) const
+throw (BadIndexException)
+{
+    if (index < 0) {
+        index = _size + index;
+    }
+
+    if (index >= (int) _size || index < 0) {
+        throw BadIndexException("index is out of range");
+    }
+
+    return T(_array[index]);
+}
+
 #endif // ARRAY_METHODS_H

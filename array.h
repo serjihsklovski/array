@@ -39,6 +39,7 @@ class Array {
         bool is_empty() const;
 
         reference operator [](int index);
+        T at(int index) const throw (BadIndexException);
 
 
     private:

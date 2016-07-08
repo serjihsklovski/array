@@ -26,5 +26,21 @@ int main(int argc, char *argv[])
         cout << arr.pop_back() << " ";
     }
 
+    cout << endl;
+
+    for (int i = 0; i < 5; ++i) {
+        arr.push_back(i * i);
+    }
+
+    for (auto it : arr) {
+        cout << it << " ";
+    }
+
+    cout << endl;
+
+    auto b = arr.at(-6);
+
+    cout << b;
+
     return 0;
 }
