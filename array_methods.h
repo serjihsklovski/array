@@ -27,7 +27,9 @@ void Array<T>::push_back(const_reference value) {
 
 
 template<typename T>
-typename Array<T>::reference Array<T>::pop_back() throw (EmptyArrayException) {
+typename Array<T>::reference Array<T>::pop_back()
+throw (EmptyArrayException)
+{
     if (is_empty()) {
         throw EmptyArrayException();
     }
@@ -61,6 +63,22 @@ throw (BadIndexException)
     }
 
     return T(_array[index]);
+}
+
+
+template<typename T>
+void Array<T>::set(int index, const_reference value)
+throw (BadIndexException)
+{
+    if (index < 0) {
+        index = _size + index;
+    }
+
+    if (index >= (int) _size || index < 0) {
+        throw BadIndexException("index is out of range");
+    }
+
+    _array[index] = value;
 }
 
 #endif // ARRAY_METHODS_H

@@ -40,6 +40,7 @@ class Array {
 
         reference operator [](int index);
         T at(int index) const throw (BadIndexException);
+        void set(int index, const_reference value) throw (BadIndexException);
 
 
     private:

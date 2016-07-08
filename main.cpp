@@ -38,9 +38,9 @@ int main(int argc, char *argv[])
 
     cout << endl;
 
-    auto b = arr.at(-6);
+    arr.set(3, 777);
 
-    cout << b;
+    cout << arr.at(3);
 
     return 0;
 }
