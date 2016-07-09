@@ -3,44 +3,23 @@
 
 using namespace std;
 
-int main(int argc, char *argv[])
+int main(/*int argc, char *argv[]*/)
 {
-    Array<int> arr;
-
-    cout << arr.get_size() << " " << arr.get_capacity() << endl;
-
-    for (int i = 0; i < 5; ++i) {
-        arr.push_back(i);
-    }
-
-    cout << arr.get_size() << " " << arr.get_capacity() << endl;
-
-    int a = arr.pop_back();
-
-    cout << a << endl;
-
-    arr.push_back(5);
-    cout << a << endl;
-
-    while (!arr.is_empty()) {
-        cout << arr.pop_back() << " ";
-    }
-
-    cout << endl;
+    Array<int> arr_1;
+    Array<int> arr_2;
 
     for (int i = 0; i < 5; ++i) {
-        arr.push_back(i * i);
+        arr_1.push_back(i);
+        arr_2.push_back(i + 5);
     }
 
-    for (auto it : arr) {
-        cout << it << " ";
+    auto arr_3 = arr_1 + arr_2;
+
+    arr_3 << 111 << 222 << 333;
+
+    for (auto it : arr_3) {
+        cout << it << endl;
     }
-
-    cout << endl;
-
-    arr.set(3, 777);
-
-    cout << arr.at(3);
 
     return 0;
 }

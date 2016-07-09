@@ -33,14 +33,16 @@ class Array {
         void reserve(size_t n);
         void shrink();
 
-        void push_back(const_reference value);
-        reference pop_back() throw (EmptyArrayException);
+        void        push_back(const_reference value);
+        reference   pop_back() throw (EmptyArrayException);
 
         bool is_empty() const;
 
-        reference operator [](int index);
-        T at(int index) const throw (BadIndexException);
-        void set(int index, const_reference value) throw (BadIndexException);
+        reference   operator [](int index);
+        T           at(int index) const throw (BadIndexException);
+        void        set(int index, const_reference value) throw (BadIndexException);
+        Array<T>    operator +(const Array<T>& rvalue) const;
+        Array<T>&   operator <<(const_reference rvalue);
 
 
     private:

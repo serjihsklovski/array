@@ -81,4 +81,29 @@ throw (BadIndexException)
     _array[index] = value;
 }
 
+
+template<typename T>
+Array<T> Array<T>::operator +(const Array<T>& rvalue) const {
+    Array<T> array(_size + rvalue._size);
+
+    array._size = array._capacity;
+
+    iterator it = new T[_size + rvalue._size];
+
+    std::copy(begin(), end(), it);
+    std::copy(rvalue.begin(), rvalue.end(), it + _size);
+
+    array._array = it;
+
+    return array;
+}
+
+
+template<typename T>
+Array<T>& Array<T>::operator <<(Array<T>::const_reference rvalue) {
+    push_back(rvalue);
+
+    return *this;
+}
+
 #endif // ARRAY_METHODS_H
