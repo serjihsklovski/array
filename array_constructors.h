@@ -15,7 +15,7 @@ Array<T>::Array():
 
 template<typename T>
 Array<T>::Array(size_t size):
-    _capacity(size >= MIN_CAPACITY ? size : MIN_CAPACITY),
+    _capacity(size >= (size_t) MIN_CAPACITY ? size : (size_t) MIN_CAPACITY),
     _size(size),
     _array(new T[_capacity])
 {}

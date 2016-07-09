@@ -84,15 +84,14 @@ throw (BadIndexException)
 
 template<typename T>
 Array<T> Array<T>::operator +(const Array<T>& rvalue) const {
-    Array<T> array(_size + rvalue._size);
-
-    array._size = array._capacity;
-
-    iterator it = new T[_size + rvalue._size];
+    size_t      new_size = _size + rvalue._size;
+    Array<T>    array(new_size);
+    iterator    it = new T[new_size];
 
     std::copy(begin(), end(), it);
     std::copy(rvalue.begin(), rvalue.end(), it + _size);
 
+    array._size = new_size;
     array._array = it;
 
     return array;
