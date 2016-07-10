@@ -30,7 +30,7 @@ class Array {
         size_t get_size() const;
         size_t get_capacity() const;
 
-        void reserve(size_t n);
+        void reserve();
         void shrink();
 
         void        push_back(const_reference value);

@@ -19,7 +19,7 @@ size_t Array<T>::get_capacity() const {
 template<typename T>
 void Array<T>::push_back(const_reference value) {
     if (_size == _capacity) {
-        reserve(FACTOR * _capacity);
+        reserve();
     }
 
     _array[_size++] = value;

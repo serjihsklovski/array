@@ -5,18 +5,14 @@
 
 
 template<typename T>
-void Array<T>::reserve(size_t n) {
-    if (n <= _capacity || n <= MIN_CAPACITY) {
-        return;
-    } else {
-        iterator it = new T[n];
-        std::copy(begin(), end(), it);
-        _capacity = n;
+void Array<T>::reserve() {
+    iterator it = new T[FACTOR * _capacity];
+    std::copy(begin(), end(), it);
+    _capacity = n;
 
-        delete[] _array;
+    delete[] _array;
 
-        _array = it;
-    }
+    _array = it;
 }
 
 
